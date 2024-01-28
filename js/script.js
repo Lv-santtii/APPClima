@@ -59,6 +59,8 @@ function mostrarResultado(data) {
         `;
     } else {
         resultadoDiv.textContent = 'Ciudad no encontrada. Por favor, ingresa un nombre de ciudad válido.';
+        resultadoDiv.style.marginTop = '-5em';
+    resultadoDiv.style.marginBottom = '2em';
     }
 }
 
