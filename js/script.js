@@ -21,8 +21,7 @@ document.getElementById('buscarBtn').addEventListener('click', function() {
         resultadoDiv.style.marginTop = '80px'; // Ajustar el margen superior al mostrar el resultado
         imagenClima.classList.add('oculto'); // Ocultar la imagen cuando se muestra el resultado
     } else {
-        resultadoDiv.style.display = 'none';
-        imagenClima.classList.remove('oculto'); // Mostrar la imagen si no hay texto en el campo de entrada
+        imagenClima.style.display = 'none';
     }
     if (ciudad !== '') {
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&lang=es`) // Agrega &lang=es para recibir la descripción en español
@@ -66,6 +65,8 @@ function mostrarResultado(data) {
 function mostrarError() {
     const resultadoDiv = document.getElementById('resultado');
     resultadoDiv.textContent = 'Por favor, ingresa un nombre de ciudad válido.';
+    resultadoDiv.style.marginTop = '-5em';
+    resultadoDiv.style.marginBottom = '7em';
 }
 
 function traducirDescripcion(description) {
